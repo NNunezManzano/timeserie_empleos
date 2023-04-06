@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "empleo_nacion"
+version = "0.1.0"
+description = "Entorno de pruebas sobre el dataset de empleos a nivel nacional"
+authors = ["Nicolas Nuñez Manzano <nico.nm30@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.5.3"
+ipynb = "^0.5.1"
+numpy = "^1.24.2"
+lightgbm = "^3.3.5"
+matplotlib = "^3.7.1"
+ipykernel = "^6.22.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
