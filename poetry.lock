@@ -40,6 +40,24 @@ python-versions = "*"
 pycparser = "*"
 
 [[package]]
+name = "cmdstanpy"
+version = "1.1.0"
+description = "Python interface to CmdStan"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+numpy = ">=1.21"
+pandas = "*"
+tqdm = "*"
+
+[package.extras]
+all = ["xarray"]
+docs = ["sphinx", "sphinx-gallery", "sphinx-rtd-theme", "numpydoc", "matplotlib"]
+tests = ["flake8", "pylint", "pytest", "pytest-cov", "pytest-order", "mypy", "tqdm", "xarray"]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -82,6 +100,22 @@ test = ["matplotlib", "pillow", "pytest"]
 test-no-images = ["pytest"]
 
 [[package]]
+name = "convertdate"
+version = "2.4.0"
+description = "Converts between Gregorian dates and other calendar systems"
+category = "main"
+optional = false
+python-versions = "<4,>=3.7"
+
+[package.dependencies]
+pymeeus = ">=0.3.13,<=1"
+
+[package.extras]
+dev = ["build", "black", "isort", "pylint"]
+docs = ["sphinx", "sphinx-rtd-theme", "myst-parser"]
+tests = ["coverage"]
+
+[[package]]
 name = "cycler"
 version = "0.11.0"
 description = "Composable style cycles"
@@ -104,6 +138,14 @@ description = "Decorators for Humans"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "ephem"
+version = "4.1.4"
+description = "Compute positions of the planets and stars"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "executing"
@@ -137,6 +179,30 @@ type1 = ["xattr"]
 ufo = ["fs (>=2.2.0,<3)"]
 unicode = ["unicodedata2 (>=15.0.0)"]
 woff = ["zopfli (>=0.1.4)", "brotlicffi (>=0.8.0)", "brotli (>=1.0.1)"]
+
+[[package]]
+name = "hijri-converter"
+version = "2.2.4"
+description = "Accurate Hijri-Gregorian dates converter based on the Umm al-Qura calendar"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "holidays"
+version = "0.22"
+description = "Generate and work with holidays in Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+convertdate = ">=2.3.0"
+hijri-converter = "*"
+korean-lunar-calendar = "*"
+PyMeeus = "*"
+python-dateutil = "*"
+tzdata = {version = "*", markers = "os_name == \"nt\""}
 
 [[package]]
 name = "ipykernel"
@@ -280,6 +346,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "korean-lunar-calendar"
+version = "0.3.1"
+description = "Korean Lunar Calendar"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "lightgbm"
 version = "3.3.5"
 description = "LightGBM Python Package"
@@ -294,6 +368,19 @@ scipy = "*"
 
 [package.extras]
 dask = ["dask[array] (>=2.0.0)", "dask[dataframe] (>=2.0.0)", "dask[distributed] (>=2.0.0)", "pandas"]
+
+[[package]]
+name = "lunarcalendar"
+version = "0.0.9"
+description = "A lunar calendar converter, including a number of lunar and solar holidays, mainly from China."
+category = "main"
+optional = false
+python-versions = ">=2.7, <4"
+
+[package.dependencies]
+ephem = ">=3.7.5.3"
+python-dateutil = ">=2.6.1"
+pytz = "*"
 
 [[package]]
 name = "matplotlib"
@@ -436,6 +523,29 @@ python-versions = ">=3.7.0"
 wcwidth = "*"
 
 [[package]]
+name = "prophet"
+version = "1.1.2"
+description = "Automatic Forecasting Procedure"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+cmdstanpy = ">=1.0.4"
+convertdate = ">=2.1.2"
+holidays = ">=0.14.2"
+LunarCalendar = ">=0.0.9"
+matplotlib = ">=2.0.0"
+numpy = ">=1.15.4"
+pandas = ">=1.0.4"
+python-dateutil = ">=2.8.0"
+tqdm = ">=4.36.1"
+
+[package.extras]
+dev = ["setuptools (>=64)", "wheel", "pytest", "jupyterlab", "nbconvert", "plotly"]
+parallel = ["dask", "distributed"]
+
+[[package]]
 name = "psutil"
 version = "5.9.4"
 description = "Cross-platform lib for process and system monitoring in Python."
@@ -483,6 +593,14 @@ python-versions = ">=3.6"
 
 [package.extras]
 plugins = ["importlib-metadata"]
+
+[[package]]
+name = "pymeeus"
+version = "0.5.12"
+description = "Python implementation of Jean Meeus astronomical routines"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pyparsing"
@@ -653,6 +771,23 @@ optional = false
 python-versions = ">= 3.7"
 
 [[package]]
+name = "tqdm"
+version = "4.65.0"
+description = "Fast, Extensible Progress Meter"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["py-make (>=0.1.0)", "twine", "wheel"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
 name = "traitlets"
 version = "5.9.0"
 description = "Traitlets Python configuration system"
@@ -673,6 +808,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "tzdata"
+version = "2023.3"
+description = "Provider of IANA time zone data"
+category = "main"
+optional = false
+python-versions = ">=2"
+
+[[package]]
 name = "wcwidth"
 version = "0.2.6"
 description = "Measures the displayed width of unicode strings in a terminal"
@@ -683,21 +826,26 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "8a9396bb8678d4217ec77980e075dde156854602bca7487cd339bac01836962e"
+content-hash = "7a117f9f677ca6a9a952e01e30cc44e0f3719ee69b56294810d426f7c7570d75"
 
 [metadata.files]
 appnope = []
 asttokens = []
 backcall = []
 cffi = []
+cmdstanpy = []
 colorama = []
 comm = []
 contourpy = []
+convertdate = []
 cycler = []
 debugpy = []
 decorator = []
+ephem = []
 executing = []
 fonttools = []
+hijri-converter = []
+holidays = []
 ipykernel = []
 ipynb = []
 ipython = []
@@ -706,7 +854,9 @@ joblib = []
 jupyter-client = []
 jupyter-core = []
 kiwisolver = []
+korean-lunar-calendar = []
 lightgbm = []
+lunarcalendar = []
 matplotlib = []
 matplotlib-inline = []
 nest-asyncio = []
@@ -719,11 +869,13 @@ pickleshare = []
 pillow = []
 platformdirs = []
 prompt-toolkit = []
+prophet = []
 psutil = []
 ptyprocess = []
 pure-eval = []
 pycparser = []
 pygments = []
+pymeeus = []
 pyparsing = []
 python-dateutil = []
 pytz = []
@@ -738,6 +890,8 @@ stack-data = []
 threadpoolctl = []
 tomli = []
 tornado = []
+tqdm = []
 traitlets = []
 typing-extensions = []
+tzdata = []
 wcwidth = []
