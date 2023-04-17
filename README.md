@@ -1,6 +1,8 @@
 # Taller de tesis 1 - Nivel de empleo CABA
 
-En el siguiente repositorio se detalla el trabajo realizado sobre 
+En el siguiente repositorio se detalla el trabajo realizado para el taller de tesis 1 de la maestria en data mining y descubrimiento del conocimiento de la Universidad de Buenos Aires.
+
+El mismo consiste en la utilizaciónde metodos derivados de la estadistica clasica (ARIMA) para la predicción del nivel de empleo en la Ciudad Autonoma de Buenos Aires, para el periodo 2022.
 
 ## Dataset
 El dataset utilizado se encuentra disponible en la pagina del ministerio de desarrollo de la nación con el nivel de empleo de la nacion Argentina.
