@@ -14,5 +14,5 @@ Exportamos el resultado a un .csv y trabajamos a partir del mismo.
 
 ## Librerias
 
-Para el manejo de dependencias e instalación de librerias se utilizo [Poetry](https://python-poetry.org/), corriendo el comando poetry  install desde la terminal se instalaran todas las librerias necesarias en un entorno virtual para el proyecto.
+Para el manejo de dependencias e instalación de librerias se utilizo [Poetry](https://python-poetry.org/), corriendo el comando ```poetry  install``` desde la terminal se instalaran todas las librerias necesarias en un entorno virtual para el proyecto.
 
