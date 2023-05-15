@@ -1,11 +1,14 @@
 DROP TABLE IF EXISTS empleos_caba
-	;
+
+;
 CREATE TABLE empleos_caba AS
 
 SELECT 
 	empleos.fecha, 
-	dpto.nombre_departamento_indec as departamento, 
+	dpto.nombre_departamento_indec as departamento,
+	clase.clae2_desc as sector,
  	empleos.puestos
+ 	
 	
 FROM puestos_depto_total_por_clae2 empleos
 
